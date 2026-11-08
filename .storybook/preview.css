@@ -1,0 +1,498 @@
+.sb-story {
+  min-height: 100vh;
+  padding: 42px clamp(1.25rem, 4vw, 42px) 4.5rem;
+  background: var(--c-bg);
+  color: var(--c-type-80);
+}
+
+.doc {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+}
+
+.doc-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.doc-nav__link {
+  padding: 16px 24px;
+  border-radius: 4px;
+  color: var(--c-black);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.doc-nav__link.is-active {
+  background: var(--c-grey);
+}
+
+.doc-nav__link:focus-visible,
+.doc-action:focus-visible,
+.doc-copy:focus-visible {
+  outline: 2px solid var(--c-blue);
+  outline-offset: 2px;
+}
+
+.doc-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 16px;
+}
+
+.doc-header__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  max-width: 42rem;
+}
+
+.doc-header__title {
+  margin: 0;
+  max-width: none;
+  color: var(--c-black);
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 44px;
+}
+
+.doc-header__lede {
+  margin: 0;
+  max-width: none;
+  color: var(--c-type-60);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.doc-action {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+  margin-top: 31px;
+  padding: 10px 16px;
+  border-radius: 3px;
+  background: var(--c-grey);
+  color: var(--c-black);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.doc-action__icon {
+  display: flex;
+  width: 16px;
+  height: 16px;
+}
+
+.doc-action__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.doc__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 298px) minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding-block: 24px;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.doc-row__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 0;
+}
+
+.doc-row__title {
+  margin: 0;
+  max-width: none;
+  color: var(--c-black);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.doc-row__copy {
+  margin: 0;
+  color: var(--c-type-60);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.doc-row__main {
+  min-width: 0;
+}
+
+.doc-row__main p {
+  margin: 0;
+}
+
+.doc-row__main .type-title {
+  max-width: none;
+}
+
+.doc-stage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding: 24px;
+  background: var(--c-white);
+  border: 1px solid #ececec;
+}
+
+.doc-stage + .doc-stage {
+  border-top: 0;
+}
+
+.doc-stage--dark {
+  background: var(--c-black);
+  border-color: var(--c-black);
+}
+
+.doc-swatches,
+.doc-grounds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 502px;
+}
+
+.doc-swatch {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(239px, 100%);
+}
+
+.doc-swatch__chip {
+  position: relative;
+  height: 72px;
+  border: 1px solid var(--c-black-16);
+  border-radius: 4px;
+}
+
+.doc-swatch__chip--alpha {
+  background-color: var(--c-white);
+  background-image:
+    linear-gradient(45deg, #e4e4e4 25%, transparent 25%),
+    linear-gradient(-45deg, #e4e4e4 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #e4e4e4 75%),
+    linear-gradient(-45deg, transparent 75%, #e4e4e4 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+}
+
+.doc-swatch__veil {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.doc-swatch__name,
+.doc-ground__name,
+.doc-note__name {
+  margin: 0;
+  color: var(--c-black);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.doc-swatch__meta,
+.doc-copy,
+.doc-note__meta,
+.doc-ground__use {
+  margin: 0;
+  color: var(--c-type-60);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.doc-copy {
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.doc-copy:hover,
+.doc-copy:focus-visible {
+  color: var(--c-black);
+  text-decoration: underline;
+}
+
+.doc-copy[data-copied="true"] {
+  color: var(--c-black);
+  text-decoration: none;
+}
+
+.doc-ground {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(237px, 100%);
+  height: 109px;
+  padding: 12px;
+  border: 1px solid var(--c-black-16);
+  border-radius: 4px;
+}
+
+.doc-ground--primary {
+  background: var(--c-primary);
+}
+
+.doc-ground--primary .doc-ground__name,
+.doc-ground--primary .doc-ground__use,
+.doc-ground--black .doc-ground__name,
+.doc-ground--black .doc-ground__use {
+  color: var(--c-white);
+}
+
+.doc-ground--white {
+  background: var(--c-white);
+}
+
+.doc-ground--grey {
+  background: var(--c-grey);
+}
+
+.doc-ground--black {
+  background: var(--c-black);
+}
+
+.doc-rules {
+  display: flex;
+  flex-direction: column;
+  width: min(502px, 100%);
+  margin-top: 24px;
+}
+
+.doc-rules div {
+  display: grid;
+  grid-template-columns: minmax(8rem, 253px) minmax(0, 1fr);
+  gap: 12px;
+  padding: 18px 8px;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  margin-bottom: -1px;
+}
+
+.doc-rules dt {
+  color: var(--c-black);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.doc-rules dd {
+  margin: 0;
+  color: var(--c-type-60);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.doc-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.doc-note {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.doc-note__name,
+.doc-note__meta {
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.doc-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px 32px;
+}
+
+.doc-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--c-black);
+}
+
+.doc-icon__mark {
+  display: flex;
+  width: 15px;
+  height: 15px;
+}
+
+.doc-icon__mark svg {
+  width: 15px;
+  height: 15px;
+}
+
+.doc-icon__name {
+  margin: 0;
+  color: var(--c-type-60);
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.sb-story .lede {
+  max-width: 42rem;
+}
+
+.sb-story .specimen {
+  padding-inline: 0;
+}
+
+.sb-story .rules div {
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+
+.rule-list {
+  display: grid;
+  margin: 1.5rem 0 0;
+  max-width: 44rem;
+}
+
+.rule-list div {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: baseline;
+  padding-block: 0.85rem;
+  border-top: 1px solid var(--c-black-16);
+}
+
+.rule-list dt {
+  color: var(--c-type);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.rule-list dd {
+  margin: 0;
+  color: var(--c-type-60);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.motion-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2rem;
+  align-items: flex-end;
+}
+
+.motion-row figure {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+}
+
+.motion-row figcaption {
+  max-width: 28ch;
+  color: var(--c-type-60);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.see-example {
+  margin-top: 3rem;
+}
+
+.see-example__title {
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.see-example .lede {
+  margin-top: 0.5rem;
+}
+
+.scroll-stage {
+  --chrome-h: 3.25rem;
+  position: relative;
+  height: min(48rem, 78vh);
+  margin-top: 1.25rem;
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: var(--c-white);
+  border: 1px solid var(--c-black-16);
+  border-radius: 4px;
+}
+
+.scroll-stage:focus-visible {
+  outline: 2px solid var(--c-blue);
+  outline-offset: 2px;
+}
+
+.scroll-stage .scroll-content {
+  padding-top: 3.25rem;
+  padding-bottom: 28rem;
+}
+
+.scroll-stage .scroll-bar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  margin-top: -3.25rem;
+}
+
+.scroll-stage.is-scrolling-down .scroll-bar {
+  transform: translateY(-100%);
+}
+
+@media (max-width: 800px) {
+  .sb-story .rules div,
+  .rule-list div,
+  .doc-row,
+  .doc-rules div {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-header {
+    flex-direction: column;
+  }
+
+  .doc-action {
+    margin-top: 0;
+  }
+
+  .doc-header__title {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+}

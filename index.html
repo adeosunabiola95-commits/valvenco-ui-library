@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en" data-system="button">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Motion lab</title>
+    <script>
+      (function () {
+        var tabs = ["button", "motion", "scroll", "type"];
+        var name = location.hash.replace("#", "");
+        if (tabs.indexOf(name) !== -1) document.documentElement.dataset.system = name;
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.23/dist/lenis.css" />
+    <link rel="stylesheet" href="./css/motion.css?v=32" />
+  </head>
+  <body>
+    <header class="system">
+      <div class="system__bar">
+        <button type="button" class="system__mark" data-go="button">Motion lab</button>
+        <div class="system__tabs" role="tablist" aria-label="System">
+          <button type="button" role="tab" id="tab-button" data-tab="button" aria-controls="button" aria-selected="true">
+            Button
+          </button>
+          <button type="button" role="tab" id="tab-motion" data-tab="motion" aria-controls="motion" aria-selected="false" tabindex="-1">
+            Motion
+          </button>
+          <button type="button" role="tab" id="tab-scroll" data-tab="scroll" aria-controls="scroll" aria-selected="false" tabindex="-1">
+            Scroll
+          </button>
+          <button type="button" role="tab" id="tab-type" data-tab="type" aria-controls="type" aria-selected="false" tabindex="-1">
+            Typography
+          </button>
+          <button type="button" role="tab" id="tab-color" data-tab="color" aria-controls="color" aria-selected="false" tabindex="-1">
+            Color
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <template id="c-button-template">
+      <a class="c-button" data-module="button" href="#button">
+        <span data-button="size" class="c-button__size">
+          <span data-button="bg" class="c-button__bg"></span>
+          <span data-button="icon-l-w" class="c-button__icon-w c-button__icon-w--l">
+            <span data-button="icon-l" class="c-button__icon" aria-hidden="true">
+              <svg viewBox="0 0 15 15" fill="none" aria-hidden="true"><path fill="currentColor" d="M8.14648 3.14669C8.31735 2.97583 8.58131 2.95407 8.77539 3.08224L8.85352 3.14669L12.8535 7.14669C13.0488 7.34195 13.0488 7.65846 12.8535 7.85372L8.85352 11.8537C8.65825 12.049 8.34175 12.049 8.14648 11.8537C7.95122 11.6585 7.95122 11.342 8.14648 11.1467L11.293 8.00021H2.5C2.22386 8.00021 2 7.77635 2 7.50021C2 7.22406 2.22386 7.00021 2.5 7.00021H11.293L8.14648 3.85372L8.08203 3.7756C7.95387 3.58152 7.97562 3.31756 8.14648 3.14669Z"/></svg>
+            </span>
+          </span>
+          <span data-button="title" class="c-button__title"><p class="c-button__p">Label</p></span>
+        </span>
+      </a>
+    </template>
+
+    <main>
+      <section class="panel" id="panel-button" data-panel="button" role="tabpanel" aria-labelledby="tab-button">
+        <div class="container panel__intro">
+          <h1 class="panel__title">Button</h1>
+          <p class="lede">The action control. Hover, press, and keyboard focus are live on every example.</p>
+        </div>
+
+        <div class="container">
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Tone</h2>
+              <p>Cyan for the main action, white on black, grey for a quieter action.</p>
+            </div>
+            <div class="specimen__body">
+              <div class="stage">
+                <div data-stamp="button" data-tone="primary" data-arrow="leading" data-label="Contact Us"></div>
+                <div data-stamp="button" data-tone="neutral" data-size="sm" data-arrow="none" data-label="Learn More"></div>
+              </div>
+              <div class="stage stage--dark">
+                <div data-stamp="button" data-tone="primary" data-arrow="leading" data-label="More about us"></div>
+                <div data-stamp="button" data-tone="secondary" data-arrow="none" data-label="Product range"></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Size</h2>
+              <p>Small sits in the bar. Default is the action in the page.</p>
+            </div>
+            <div class="specimen__body">
+              <div class="stage">
+                <div data-stamp="button" data-tone="primary" data-size="sm" data-arrow="leading" data-label="More about us"></div>
+                <div data-stamp="button" data-tone="primary" data-arrow="leading" data-label="Contact Us"></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Arrow</h2>
+              <p>The arrow is part of the action. Without it, the label sits on its own.</p>
+            </div>
+            <div class="specimen__body">
+              <div class="stage">
+                <div data-stamp="button" data-tone="primary" data-arrow="leading" data-label="Contact Us"></div>
+                <div data-stamp="button" data-tone="primary" data-arrow="none" data-label="Product range"></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Specs</h2>
+              <p>Size and color for Figma. Height includes the 16px icon.</p>
+            </div>
+            <div class="specimen__body">
+              <dl class="specs">
+                <div>
+                  <dt>Default</dt>
+                  <dd>48px tall · Padding 16 × 20–24 · Radius 4 · Icon 16 · Gap 10</dd>
+                </div>
+                <div>
+                  <dt>Small</dt>
+                  <dd>36px tall · Padding 10 × 16 · Radius 3 · Icon 16 · Gap 10</dd>
+                </div>
+                <div>
+                  <dt>Label</dt>
+                  <dd>15px · Inter 500 · −0.02em · Line height 1</dd>
+                </div>
+                <div>
+                  <dt>Focus</dt>
+                  <dd>2px · #00B1F5 · Offset 2</dd>
+                </div>
+              </dl>
+              <ul class="swatches">
+                <li>
+                  <span class="swatch swatch--blue"></span>
+                  <span class="swatch__name">Primary</span>
+                  <span class="swatch__meta">Fill #00B1F5 · Label #FFFFFF</span>
+                </li>
+                <li>
+                  <span class="swatch swatch--white"></span>
+                  <span class="swatch__name">Secondary</span>
+                  <span class="swatch__meta">Fill #FFFFFF · Label #000000</span>
+                </li>
+                <li>
+                  <span class="swatch swatch--grey"></span>
+                  <span class="swatch__name">Neutral</span>
+                  <span class="swatch__meta">Fill #ECECEC · Label #000000</span>
+                </li>
+                <li>
+                  <span class="swatch swatch--light"></span>
+                  <span class="swatch__name">Invert</span>
+                  <span class="swatch__meta">Fill #ECECEC · Label #000000</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-motion" data-panel="motion" role="tabpanel" aria-labelledby="tab-motion">
+        <div class="container panel__intro">
+          <h1 class="panel__title">Motion examples</h1>
+          <p class="lede">The same button and the same press. Each example changes one hover.</p>
+        </div>
+        <div class="container">
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Letter roll</h2>
+              <p>The hover from the site. Each letter rolls up, and the leading icon switches to the right.</p>
+            </div>
+            <div class="specimen__body">
+              <div class="stage">
+                <div data-stamp="button" data-variant="roll" data-tone="primary" data-arrow="leading" data-label="Contact Us" data-href="#motion"></div>
+              </div>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Line lift</h2>
+              <p>The words move together, as one line. The leading icon switches to the right.</p>
+            </div>
+            <div class="specimen__body">
+              <div class="stage">
+                <div data-stamp="button" data-variant="lift" data-tone="primary" data-arrow="leading" data-label="Contact Us" data-href="#motion"></div>
+              </div>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Invert</h2>
+              <p>The fill turns over from the left on a 30° edge and covers the button in the background grey. The letters stay where they are.</p>
+            </div>
+            <div class="specimen__body">
+              <div class="stage stage--plain">
+                <div data-stamp="button" data-variant="wipe" data-tone="primary" data-arrow="leading" data-label="Contact Us" data-href="#motion"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-scroll" data-panel="scroll" role="tabpanel" aria-labelledby="tab-scroll">
+        <div class="scroll-bar" data-module="header">
+          <span>Sample header</span>
+          <span>Scroll down and it tucks away. Scroll up and it returns.</span>
+        </div>
+
+        <div class="container panel__intro">
+          <h1 class="panel__title">Scroll animation examples</h1>
+          <p class="lede">Scroll this tab. The page eases after the wheel, and the sample header hides once you pass 120px.</p>
+        </div>
+
+        <section class="c-hero">
+          <div class="c-hero__bg" data-module="parallax" data-parallax-amount="100" aria-hidden="true"></div>
+          <div class="c-hero__content container">
+            <div class="c-hero__lead">
+              <h2>A global organisation.</h2>
+            </div>
+            <div class="c-hero__foot">
+              <p class="c-hero__desc">The photograph drifts behind the headline as the section moves through the screen.</p>
+            </div>
+          </div>
+        </section>
+
+        <article class="specimen specimen--stack">
+          <div class="specimen__head container">
+            <h2 class="specimen__title">Reveal</h2>
+            <p>Each block starts 24px lower and eases in over 0.9s once it crosses 82% of the screen. The line draws from the left.</p>
+          </div>
+          <div class="container" data-module="reveal">
+            <h2 data-reveal>Sections fade up as they enter.</h2>
+            <p class="lede" data-reveal>The blocks ease in together, in step with the rest of the page.</p>
+            <div class="rule" data-reveal-line></div>
+            <div class="reveal-list">
+              <p data-reveal>Scrolling down past the top of the page tucks the sample header.</p>
+              <p data-reveal>Scrolling up brings the header back.</p>
+              <p data-reveal>Photographs and numbers drift at their own pace.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="specimen specimen--stack">
+          <div class="specimen__head container">
+            <h2 class="specimen__title">Parallax</h2>
+            <p>The frame stays put. The photograph travels inside it.</p>
+          </div>
+          <div class="band">
+            <div class="band__frame">
+              <div class="band__photo" data-module="parallax" data-parallax-amount="120"></div>
+            </div>
+            <p class="photo-credit">Pipes and flanges: U.S. Department of Energy. Steel pipes: W.carter, CC BY-SA 4.0.</p>
+          </div>
+        </article>
+
+        <article class="specimen specimen--stack">
+          <div class="specimen__head container">
+            <h2 class="specimen__title">Depth</h2>
+            <p>The figures fade in together, then keep moving at different speeds while the section is on screen.</p>
+          </div>
+          <section class="section section--stats" data-module="stats-plx">
+            <div class="container">
+              <ul class="stats">
+                <li data-stats-plx="item" data-stats-plx-depth="0.55">
+                  <strong>0.4s</strong>
+                  <span>header slide</span>
+                </li>
+                <li data-stats-plx="item" data-stats-plx-depth="1">
+                  <strong>0.5s</strong>
+                  <span>button hover</span>
+                </li>
+                <li data-stats-plx="item" data-stats-plx-depth="1.35">
+                  <strong>120</strong>
+                  <span>pixels before the header tucks</span>
+                </li>
+                <li data-stats-plx="item" data-stats-plx-depth="1.7">
+                  <strong>0.9s</strong>
+                  <span>reveal duration</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </article>
+
+        <article class="specimen specimen--stack" id="steps">
+          <div class="specimen__head container">
+            <h2 class="specimen__title">Step wipe</h2>
+            <p>Each step, from 80% to 45% of the screen, wipes the next panel open. Scroll back and it closes.</p>
+          </div>
+          <div class="container steps" data-module="step-list">
+            <div class="steps__copy">
+              <ol class="steps__list">
+                <li data-step-list="content-item">
+                  <span>01</span>
+                  <div>
+                    <h3>A global organisation</h3>
+                    <p>The first panel is already open.</p>
+                  </div>
+                </li>
+                <li data-step-list="content-item">
+                  <span>02</span>
+                  <div>
+                    <h3>Product range</h3>
+                    <p>This step wipes the next panel in.</p>
+                  </div>
+                </li>
+                <li data-step-list="content-item">
+                  <span>03</span>
+                  <div>
+                    <h3>Clarity and transparency</h3>
+                    <p>Reversing the page reverses the panel.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+            <div class="steps__stage">
+              <div class="steps__visual" data-step-list="visual-item">
+                <p>01</p>
+                <span>Open</span>
+              </div>
+              <div class="steps__visual steps__visual--b" data-step-list="visual-item">
+                <p>02</p>
+                <span>In progress</span>
+              </div>
+              <div class="steps__visual steps__visual--c" data-step-list="visual-item">
+                <p>03</p>
+                <span>Done</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel" id="panel-type" data-panel="type" role="tabpanel" aria-labelledby="tab-type">
+        <div class="container panel__intro">
+          <h1 class="panel__title">Typography</h1>
+          <p class="lede">Inter, from 96px to 12px. These are the text styles to carry into Figma.</p>
+        </div>
+        <div class="container">
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Family</h2>
+              <p>400 · 500 · 600</p>
+            </div>
+            <div class="specimen__body">
+              <p class="type-family">Inter</p>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Ink</h2>
+              <p>Black, in shades. Headings take 100%. Body copy inherits 80%.</p>
+            </div>
+            <div class="specimen__body">
+              <ul class="ink">
+                <li>
+                  <span class="ink__sample ink__sample--100">Control valves</span>
+                  <span>100% · #000000</span>
+                </li>
+                <li>
+                  <span class="ink__sample ink__sample--80">Body copy inherits this shade.</span>
+                  <span>80% · #000000</span>
+                </li>
+                <li>
+                  <span class="ink__sample ink__sample--60">Lede and supporting text.</span>
+                  <span>60% · #000000</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Display 96</h2>
+              <p>96px · 500 · −0.04em · 1</p>
+            </div>
+            <div class="specimen__body">
+              <p class="type-96">Control valves</p>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Display 80</h2>
+              <p>80px desktop · 48px floor · 500 · −0.035em · 1.05</p>
+            </div>
+            <div class="specimen__body">
+              <p class="type-display">A global organisation.</p>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Display 64</h2>
+              <p>64px · 500 · −0.035em · 1.05</p>
+            </div>
+            <div class="specimen__body">
+              <p class="type-64">Product range</p>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Title 56</h2>
+              <p>56px desktop · 36px floor · 500 · −0.03em · 1.1</p>
+            </div>
+            <div class="specimen__body">
+              <p class="type-title">Same button, three hovers.</p>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Title 40</h2>
+              <p>40px · 500 · −0.03em · 1.1</p>
+            </div>
+            <div class="specimen__body">
+              <p class="type-40">Same button, three hovers.</p>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Heading 32</h2>
+              <p>32px · 500 · −0.03em · 1.15</p>
+            </div>
+            <div class="specimen__body">
+              <p class="type-32">Sections fade up</p>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Heading 24</h2>
+              <p>24px · 500 · −0.03em · 1.2</p>
+            </div>
+            <div class="specimen__body">
+              <p class="type-24">Sections fade up as they enter.</p>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Heading 22</h2>
+              <p>22px · 500 · −0.03em · 1.2</p>
+            </div>
+            <div class="specimen__body">
+              <p class="type-22">Sections fade up as they enter.</p>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Lede 18</h2>
+              <p>18px · 400 · 1.45 · #000000 at 60%</p>
+            </div>
+            <div class="specimen__body">
+              <p class="lede">The same button and the same press. Each example changes one hover.</p>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Body 16</h2>
+              <p>16px · 400 · 1.45 · #000000 at 80%</p>
+            </div>
+            <div class="specimen__body">
+              <p class="type-body">Scroll down and the sample header tucks away. Scroll up and it returns. Photographs and numbers drift at their own pace.</p>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Button 15</h2>
+              <p>15px · 500 · −0.02em · 1</p>
+            </div>
+            <div class="specimen__body">
+              <p class="type-button">Contact Us</p>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Caption 14</h2>
+              <p>14px · 400 · 1.4</p>
+            </div>
+            <div class="specimen__body">
+              <p class="type-caption">Scroll down and the sample header tucks away. Scroll up and it returns.</p>
+            </div>
+          </article>
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Eyebrow 12</h2>
+              <p>12px · 500 · 0.14em · uppercase</p>
+            </div>
+            <div class="specimen__body">
+              <p class="eyebrow">Button hover</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-color" data-panel="color" role="tabpanel" aria-labelledby="tab-color">
+        <div class="container panel__intro">
+          <h1 class="panel__title">Color</h1>
+          <p class="lede">Primary for the action, black for type, white for the page.</p>
+        </div>
+        <div class="container">
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Palette</h2>
+              <p>Grey is the quieter button. The page stays white. Body copy is black at 80%, and descriptions sit at 60%.</p>
+            </div>
+            <div class="specimen__body">
+              <ul class="swatches swatches--field">
+                <li>
+                  <span class="swatch swatch--blue"></span>
+                  <span class="swatch__name">Primary</span>
+                  <span class="swatch__meta">#00B1F5 · --c-primary</span>
+                </li>
+                <li>
+                  <span class="swatch swatch--white"></span>
+                  <span class="swatch__name">White</span>
+                  <span class="swatch__meta">#FFFFFF · --c-white</span>
+                </li>
+                <li>
+                  <span class="swatch swatch--grey"></span>
+                  <span class="swatch__name">Grey</span>
+                  <span class="swatch__meta">#ECECEC · --c-grey</span>
+                </li>
+                <li>
+                  <span class="swatch swatch--black"></span>
+                  <span class="swatch__name">Black</span>
+                  <span class="swatch__meta">#000000 · --c-black</span>
+                </li>
+                <li>
+                  <span class="swatch swatch--black-80"></span>
+                  <span class="swatch__name">Black 80%</span>
+                  <span class="swatch__meta">rgba(0, 0, 0, 0.8) · --c-type-80 · Body</span>
+                </li>
+                <li>
+                  <span class="swatch swatch--black-60"></span>
+                  <span class="swatch__name">Black 60%</span>
+                  <span class="swatch__meta">rgba(0, 0, 0, 0.6) · --c-type-60 · Descriptions</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Ink</h2>
+              <p>Black, in shades. Headings take 100%. Body copy inherits 80%.</p>
+            </div>
+            <div class="specimen__body">
+              <ul class="ink">
+                <li>
+                  <span class="ink__sample ink__sample--100">Control valves</span>
+                  <span>100% · #000000 · Headings</span>
+                </li>
+                <li>
+                  <span class="ink__sample ink__sample--80">Body copy inherits this shade.</span>
+                  <span>80% · Body</span>
+                </li>
+                <li>
+                  <span class="ink__sample ink__sample--60">Lede, captions, and supporting text.</span>
+                  <span>60% · Lede and captions</span>
+                </li>
+                <li>
+                  <span class="hairline"></span>
+                  <span>16% · Hairlines and borders</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Usage</h2>
+              <p>Each ground keeps one job. The label color is part of the rule.</p>
+            </div>
+            <div class="specimen__body">
+              <ul class="grounds">
+                <li class="ground ground--primary">
+                  <p class="ground__name">Primary</p>
+                  <p class="ground__use">Main action. The label is white.</p>
+                </li>
+                <li class="ground ground--white">
+                  <p class="ground__name">White</p>
+                  <p class="ground__use">Page and stages. Headings are black, body is 80%.</p>
+                </li>
+                <li class="ground ground--grey">
+                  <p class="ground__name">Grey</p>
+                  <p class="ground__use">Quieter button and the invert fill. The label is black.</p>
+                </li>
+                <li class="ground ground--black">
+                  <p class="ground__name">Black</p>
+                  <p class="ground__use">The ground for a white button. Type on it is white.</p>
+                </li>
+              </ul>
+              <dl class="rules">
+                <div>
+                  <dt>Primary button</dt>
+                  <dd>Fill #00B1F5 · Label #FFFFFF</dd>
+                </div>
+                <div>
+                  <dt>Secondary button</dt>
+                  <dd>Fill #FFFFFF · Label #000000 · On black</dd>
+                </div>
+                <div>
+                  <dt>Neutral button</dt>
+                  <dd>Fill #ECECEC · Label #000000</dd>
+                </div>
+                <div>
+                  <dt>Invert</dt>
+                  <dd>Fill #ECECEC · Label #000000</dd>
+                </div>
+                <div>
+                  <dt>Body</dt>
+                  <dd>Black 80% · rgba(0, 0, 0, 0.8)</dd>
+                </div>
+                <div>
+                  <dt>Descriptions</dt>
+                  <dd>Black 60% · rgba(0, 0, 0, 0.6)</dd>
+                </div>
+                <div>
+                  <dt>Focus</dt>
+                  <dd>2px · #00B1F5 · Offset 2</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="specimen">
+            <div class="specimen__head">
+              <h2 class="specimen__title">Primary deep</h2>
+              <p>#0077A8. A darker step of primary, used only on the second scroll panel, with white type.</p>
+            </div>
+            <div class="specimen__body">
+              <div class="ground ground--deep">
+                <p class="ground__name">02</p>
+                <p class="ground__use">White type on #0077A8.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/main.js?v=27"></script>
+  </body>
+</html>

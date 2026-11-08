@@ -1,0 +1,35 @@
+import { addons } from "storybook/manager-api";
+import { create } from "storybook/theming/create";
+
+addons.setConfig({
+  theme: create({
+    base: "light",
+    brandTitle: "Valvenco",
+    brandTarget: "_self",
+    fontBase: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+    fontCode: 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',
+    colorPrimary: "#00B1F5",
+    colorSecondary: "#00B1F5",
+    appBg: "#FFFFFF",
+    appContentBg: "#FFFFFF",
+    appPreviewBg: "#FFFFFF",
+    appHoverBg: "#ECECEC",
+    appBorderColor: "rgba(0, 0, 0, 0.16)",
+    appBorderRadius: 4,
+    textColor: "#000000",
+    textInverseColor: "#FFFFFF",
+    textMutedColor: "rgba(0, 0, 0, 0.6)",
+    barTextColor: "rgba(0, 0, 0, 0.6)",
+    barHoverColor: "#000000",
+    barSelectedColor: "#000000",
+    barBg: "#FFFFFF",
+    buttonBg: "#FFFFFF",
+    buttonBorder: "rgba(0, 0, 0, 0.16)",
+    booleanBg: "#ECECEC",
+    booleanSelectedBg: "#00B1F5",
+    inputBg: "#FFFFFF",
+    inputBorder: "rgba(0, 0, 0, 0.16)",
+    inputTextColor: "#000000",
+    inputBorderRadius: 4,
+  }),
+});
