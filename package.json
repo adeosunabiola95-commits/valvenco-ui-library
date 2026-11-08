@@ -1,8 +1,8 @@
 {
-  "name": "abcchs-motion",
+  "name": "valvenco-ui-library",
   "private": true,
   "type": "module",
-  "description": "Valvenco foundation system: color, type, button, and motion.",
+  "description": "Valvenco UI Library",
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

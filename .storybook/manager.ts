@@ -4,7 +4,7 @@ import { create } from "storybook/theming/create";
 addons.setConfig({
   theme: create({
     base: "light",
-    brandTitle: "Valvenco",
+    brandTitle: "Valvenco UI Library",
     brandTarget: "_self",
     fontBase: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
     fontCode: 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',
