@@ -475,6 +475,183 @@
   transform: translateY(-100%);
 }
 
+.sb-story.sb-story--intro {
+  --intro-frame: clamp(16px, 2.3125vw, 37px);
+  height: 100vh;
+  min-height: 100vh;
+  padding: var(--intro-frame);
+  overflow: hidden;
+  background: var(--c-primary);
+}
+
+.intro {
+  height: 100%;
+  overflow: auto;
+  background: var(--c-white);
+  color: var(--c-type);
+  scroll-padding-top: 2.5rem;
+}
+
+.intro-cover {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 100%;
+  padding: clamp(2.5rem, 8vh, 4.5rem) clamp(1.5rem, 5vw, 5rem) clamp(3rem, 8vh, 5rem)
+    clamp(1.5rem, 4.4vw, 67px);
+}
+
+.intro-lockup {
+  width: min(872px, 100%);
+}
+
+.intro-mark {
+  width: 291px;
+  max-width: 100%;
+  height: auto;
+}
+
+.intro-title {
+  margin: 44px 0 0 -10px;
+  max-width: 882px;
+  color: var(--c-black);
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.intro-lede {
+  max-width: 36rem;
+  margin-top: 32px;
+  color: var(--c-type-60);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.intro-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px 32px;
+  margin-top: 28px;
+}
+
+.intro-link {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 8.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.intro-link__name {
+  color: var(--c-black);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.intro-link__hint {
+  color: var(--c-type-60);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.intro-link:hover .intro-link__name,
+.intro-link:focus-visible .intro-link__name {
+  text-decoration: underline;
+}
+
+.intro-link:focus-visible {
+  outline: 2px solid var(--c-blue);
+  outline-offset: 4px;
+}
+
+.intro-log {
+  scroll-margin-top: 2.5rem;
+  padding: 0 clamp(1.5rem, 5vw, 5rem) clamp(3rem, 8vh, 5rem) clamp(1.5rem, 4.4vw, 67px);
+}
+
+.intro-log__inner {
+  width: min(872px, 100%);
+}
+
+.intro-log__title {
+  margin: 0;
+  color: var(--c-black);
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.intro-log__lede {
+  max-width: 36rem;
+  margin-top: 12px;
+  color: var(--c-type-60);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.intro-entry {
+  margin-top: 28px;
+}
+
+.intro-entry__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-bottom: 16px;
+}
+
+.intro-entry__version {
+  margin: 0;
+  color: var(--c-black);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.intro-entry time {
+  color: var(--c-type-60);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.intro-entry__list {
+  margin: 0;
+}
+
+.intro-entry__list div {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  padding-block: 14px;
+  border-top: 1px solid var(--c-black-16);
+}
+
+.intro-entry__list dt {
+  color: var(--c-black);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.intro-entry__list dd {
+  margin: 0;
+  color: var(--c-type-60);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
 @media (max-width: 800px) {
   .sb-story .rules div,
   .rule-list div,
@@ -494,5 +671,15 @@
   .doc-header__title {
     font-size: 32px;
     line-height: 1.15;
+  }
+
+  .intro-title {
+    margin-left: 0;
+    white-space: normal;
+  }
+
+  .intro-entry__list div {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 }

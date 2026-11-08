@@ -50,4 +50,4 @@ npx serve storybook-static
 | `.storybook/` | Storybook configuration and preview styles. |
 | `index.html` | Standalone motion lab. Serve the repo root with a local server; opening the file directly will not load its modules. |
 
-Story order in the sidebar is Typography, Button, Color, Iconography, Motion, Scroll.
+Story order in the sidebar is Introduction, Typography, Button, Color, Iconography, Motion, Scroll.

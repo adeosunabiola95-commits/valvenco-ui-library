@@ -7,14 +7,14 @@ const preview: Preview = {
     layout: "fullscreen",
     options: {
       storySort: {
-        order: ["Typography", "Button", "Color", "Iconography", "Motion", "Scroll"],
+        order: ["Introduction", "Typography", "Button", "Color", "Iconography", "Motion", "Scroll"],
       },
     },
   },
   decorators: [
-    (story) => {
+    (story, context) => {
       const frame = document.createElement("div");
-      frame.className = "sb-story";
+      frame.className = context.title === "Introduction" ? "sb-story sb-story--intro" : "sb-story";
       const content = story();
       if (content instanceof Node) frame.append(content);
       return frame;
