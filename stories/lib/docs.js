@@ -3,6 +3,7 @@ import { iconSvg } from "../../js/icons.js";
 const PAGES = [
   ["Typography", "typography--scale"],
   ["Button", "button--tones"],
+  ["Consent", "consent--agreement"],
   ["Color", "color--palette"],
   ["Iconography", "iconography--set"],
 ];

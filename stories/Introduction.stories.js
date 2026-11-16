@@ -3,6 +3,7 @@ import markUrl from "../images/lff-valvenco-mark.png";
 const LINKS = [
   ["Typography", "96px to 12px", "/?path=/story/typography--scale", true],
   ["Button", "Tone, size, arrow", "/?path=/story/button--tones", true],
+  ["Consent", "Enquiry agreement", "/?path=/story/consent--agreement", true],
   ["Color", "Palette and grounds", "/?path=/story/color--palette", true],
   ["Iconography", "Five sharp marks", "/?path=/story/iconography--set", true],
   ["Motion", "Hover, leave, press", "/?path=/story/motion--button-hover", true],
@@ -15,6 +16,7 @@ const CHANGES = [
   ["Color", "Primary #00B1F5, white, grey #ECECEC, black, and type at 80% and 60%."],
   ["Iconography", "Arrow, arrow up-right, download, mail, and product. 15px, sharp."],
   ["Button", "Primary, secondary, and neutral. Small and default. The arrow is optional. The page links to a live playground."],
+  ["Consent", "Unchecked until the person agrees. The tick draws on in 0.5s and leaves in 0.45s."],
   ["Motion", "Hover 0.5s. Leave runs from the last letter. Press scales to 0.9. A fine pointer only. Reduced motion skips the movement."],
   ["Scroll", "Wheel catch-up 0.08. The header tucks after 120px. Reveals, parallax, and steps keep their own timings."],
 ];

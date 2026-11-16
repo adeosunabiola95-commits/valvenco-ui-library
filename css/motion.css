@@ -1164,8 +1164,137 @@ html[data-system="scroll"] [data-panel="scroll"] {
   }
 }
 
+.c-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 36rem;
+  margin: 0;
+  color: var(--c-type-80);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.c-consent__control {
+  position: relative;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  margin-top: 1px;
+}
+
+.c-consent__input {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.c-consent__box {
+  position: absolute;
+  inset: 2px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--c-black);
+  border-radius: 2px;
+  background: var(--c-white);
+  pointer-events: none;
+}
+
+.c-consent__tick {
+  width: 14px;
+  height: 14px;
+  overflow: visible;
+  color: var(--c-black);
+}
+
+.c-consent__tick path {
+  --tick-length: 16.411;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-dasharray: var(--tick-length);
+  stroke-dashoffset: var(--tick-length);
+}
+
+.c-consent[data-ready] .c-consent__box {
+  transition: background-color 0.45s var(--ease);
+}
+
+.c-consent[data-ready] .c-consent__tick path {
+  transition: stroke-dashoffset 0.45s var(--ease);
+}
+
+.c-consent__input:checked + .c-consent__box {
+  background: var(--c-primary);
+}
+
+.c-consent__input:checked + .c-consent__box path {
+  stroke-dashoffset: 0;
+}
+
+.c-consent[data-ready] .c-consent__input:checked + .c-consent__box,
+.c-consent[data-ready] .c-consent__input:checked + .c-consent__box path {
+  transition-duration: 0.5s;
+}
+
+.c-consent__input:focus-visible + .c-consent__box {
+  outline: 2px solid var(--c-blue);
+  outline-offset: 2px;
+}
+
+.c-consent__text {
+  padding-top: 2px;
+}
+
+.c-consent:has(.c-consent__input:disabled) {
+  color: var(--c-type-60);
+  cursor: not-allowed;
+}
+
+.c-consent__input:disabled + .c-consent__box {
+  border-color: var(--c-black-16);
+  background: var(--c-grey);
+}
+
+.c-consent__input:disabled:checked + .c-consent__box .c-consent__tick {
+  color: var(--c-type-60);
+}
+
+@media (forced-colors: active) {
+  .c-consent__box {
+    border-color: CanvasText;
+    background: Canvas;
+  }
+
+  .c-consent__input:checked + .c-consent__box {
+    background: Highlight;
+  }
+
+  .c-consent__tick {
+    color: CanvasText;
+  }
+
+  .c-consent__input:focus-visible + .c-consent__box {
+    outline-color: Highlight;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .c-consent__box,
+  .c-consent__tick path {
+    transition: none;
   }
 }

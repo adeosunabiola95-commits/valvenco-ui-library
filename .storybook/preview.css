@@ -167,6 +167,12 @@
   border-top: 0;
 }
 
+.doc-stage--stack {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
 .doc-stage--dark {
   background: var(--c-black);
   border-color: var(--c-black);

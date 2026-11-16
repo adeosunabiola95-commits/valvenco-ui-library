@@ -7,7 +7,7 @@ const preview: Preview = {
     layout: "fullscreen",
     options: {
       storySort: {
-        order: ["Introduction", "Typography", "Button", "Color", "Iconography", "Motion", "Scroll"],
+        order: ["Introduction", "Typography", "Button", "Consent", "Color", "Iconography", "Motion", "Scroll"],
       },
     },
   },
